@@ -24,6 +24,22 @@
     src:url(../fonts/Raleway-Black.ttf)
 }
 
+/* Make the inner content the scroll host and enable smooth anchor scrolling */
+.site-content {
+  height: 100vh;                /* fill the viewport */
+  overflow-y: auto;             /* enable vertical scrolling inside this element */
+  overflow-x: hidden;
+  scroll-behavior: smooth;      /* native smooth scrolling for anchors/JS */
+  -webkit-overflow-scrolling: touch; /* smoother on iOS */
+}
+
+/* If you have a fixed header that covers targets, set a margin for anchored sections */
+section[id] {
+  scroll-margin-top: 70px; /* adjust 70px to your header height */
+}
+
+
+
 /* colors  */
 
 :root {
@@ -77,6 +93,24 @@ body{
       max-width: 1152px;
     }
   }
+
+
+.topbar-quote {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  white-space: nowrap;
+}
+
+.topbar-quote span {
+  color: var(--pure);        /* matches topbar color */
+  font-family: "Raleway-medium";
+}
+
+/* hide on smaller screens so header doesn't crowd */
+@media (max-width: 992px) {
+  .topbar-quote { display: none; }
+}
 
 
 
@@ -149,6 +183,8 @@ header.topbar{
     padding: 0.75rem 0;
 }
 
+
+
 header.topbar .login > div a{
     color: var(--pure);
     text-decoration: none;
@@ -165,6 +201,16 @@ header.topbar .login .divider{
 header.topbar .login > div img{
     margin-right: 0.35rem;
 }
+
+header.topbar .login .cart-home{
+    padding-left: 850px;
+}
+
+header.topbar .login .cart-home img{
+    width: 18px;
+}
+
+
 
 nav .top{
     padding: 1.5rem 0;

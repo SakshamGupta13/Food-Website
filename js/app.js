@@ -25,4 +25,15 @@ $(document).ready(function(){
   $('.nav-trigger').click(function(){
      $('.site-content-wrapper').toggleClass('scaled');
   })
+
+   $('.subscribe button').click(function(){
+      alert("Thank you for subscribing!");
+   });
+
+   $('.food-card button').click(function(){
+      alert("Item added to cart!");
+   });
+
+
+   
 });
